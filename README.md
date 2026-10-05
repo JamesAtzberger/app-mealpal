@@ -2,6 +2,10 @@
 
 The app was developed for finding healthy recipes that are easy to cook. 
 
+You can try out the app by clicking here [[link]](https://jamesatzberger.github.io/app-mealpal/index.html).
+
+## More Details 
+
 You can sort by food types, amount of fat or sugar, and other filters. 
 <p align="left">
 <a href="https://jamesatzberger.github.io/app-mealpal/index.html">
@@ -24,8 +28,11 @@ You click the recipe description to get the full set of instructions for cooking
 </p>
 By bookmarking recipes you also can save them for later and download them to 
 share with other people.  
+<br>
+<br>
 
 I hope you enjoy! 
+<br>
 
-Please try out the app by clicking here [link](https://jamesatzberger.github.io/app-mealpal/index.html).
+Please try out the app by clicking here [[link]](https://jamesatzberger.github.io/app-mealpal/index.html).
 
