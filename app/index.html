@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MealPal App</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="./favicon.ico">
+</head>
+<body>
+
+<header id="header-panel" class="app-header">
+  <h1>🥭 MealPal App Recipes</h1>
+  <div class="header-controls">
+    <input
+      id="search-input"
+      type="search"
+      placeholder="Search by name, food, or tag..."
+      aria-label="Search recipes"
+    >
+    <!--
+    <button id="btn-meal-type" class="btn btn-primary">Meal Type</button>
+    -->
+    <button id="btn-low-fat" class="btn btn-primary">Low Fat</button>
+    <button id="btn-low-sugar" class="btn btn-primary">Low Sugar</button>
+    <button id="btn-low-carb" class="btn btn-primary">Low Carb</button>
+    <button id="btn-low-cal" class="btn btn-primary">Low Calorie</button>
+    <button id="btn-bookmarked" class="btn btn-primary">Bookmarked</button>
+    <button id="theme-toggle" class="btn btn-icon" aria-label="Toggle dark mode" title="Toggle dark/light mode">🌙</button>
+    <button id="btn-export" class="btn btn-icon" aria-label="export-bookmarks" title="Export Bookmarks">↓</button>
+    <button id="btn-import" class="btn btn-icon" aria-label="import-bookmarks" title="Import Bookmarks">↑</button>
+    <button id="btn-config" class="btn btn-icon" aria-label="configuration" title="Configuration">⛭</button>
+    <button id="btn-about" class="btn btn-icon" aria-label="about" title="About">🛈</button>
+  </div>
+</header>
+
+<main id="main-panel">
+  <p id="empty-state" class="empty-state" hidden>
+    No recipes yet: click "Add Recipe" to create your first card.
+  </p>
+  <p id="no-results" class="empty-state" hidden>
+    No recipes match your search.
+  </p>
+  <div id="recipe-list" class="card-grid" aria-live="polite"></div>
+  <div id="shown-recipe" class="recipe-display" aria-live="polite"></div>
+</main>
+
+<!-- About modal dialog -->
+<dialog id="dialog-about">
+
+     <h1>About</h1> 
+     <h2>MealPal App </h2>
+     <b> James F. Atzberger</b> <br>
+     <a href="http://james.atzberger.org">http://james.atzberger.org</a>
+     <br> <br>
+     This app was developed with the aim to help further engage young people and others in cooking 
+     healthy recipes. I hope the app will help with making healthy 
+     choices, learning to cook, and nutritious meal planning.  
+     <br>     
+     <br>
+     I hope you enjoy! 
+     <br> <br>
+
+    <h3> Acknowledgements:</h3> 
+    The app was built using a combination of JavaScript tutorials, AI LLMs, and other
+    web sources. This included using Anthropic Claude Sonet 5 to develop a Javascript
+    tutorial for us to learn key functions and approaches through exercises and
+    examples. We also learned concepts from the WC3 Tutorial Series <a
+    href="https://www.w3schools.com/js/">https://www.w3schools.com/js/</a>. We
+    would also like to acknowledge help from Paul Atzberger. The data for our recipes
+    builds on the USDA project MyPlate.food and their public domain database. <br>
+    <br>
+
+     <h3> Bug Reporting: </h3> 
+     For any bugs, comments, or suggestions, please submit using the Google-Form: <br>
+     <a href="https://docs.google.com/forms/d/e/1FAIpQLSe27IsBGhgMosada-SAep7yr7SoDGRo8sol0Fct8u6mqeydVw/viewform?usp=sharing&ouid=114486844121496470662">[click here]</a>. <br>
+     <br>
+
+     Thanks for using our app! <br>
+
+    <div class="dialog-actions">
+      <button type="button" id="btn-close-about" class="btn btn-secondary">Close</button>
+    </div>
+</dialog>
+
+<!-- Config dialog -->
+<dialog id="dialog-config">
+
+     <h1>Configuration</h1> <br>
+
+     You can adjust the thresholds for calories, carbs, and surgar here. <br> 
+     
+
+     <br>
+     <label for="slider-low-carb">Low Carbohydrates Threshold: <span id="label-low-carb">15</span></label> <br>
+     <input type="range" id="slider-low-carb" min="0" max="50" value="50" step="5"> <br>
+
+     <br>
+     <label for="slider-low-sugar">Low Sugar Threshold: <span id="label-low-sugar">2</span></label> <br>
+     <input type="range" id="slider-low-sugar" min="0" max="10" value="2" step="1"> <br>
+    
+     <br>
+     <label for="slider-low-fat">Low Fat Threshold: <span id="label-low-fat">3</span></label> <br>
+     <input type="range" id="slider-low-fat" min="0" max="20" value="3" step="1"> <br>
+     
+     <br>
+     <label for="slider-low-cal">Low Calorie Threshold: <span id="label-low-cal">200</span></label> <br>
+     <input type="range" id="slider-low-cal" min="0" max="500" value="50" step="10"> <br>
+
+     <br>
+
+     Note: The 
+     nutrition filter is only applied for the categories that are active.  Click the 
+     "Low Carb", "Low Calorie", "Low Sugar", "Low Fat" to toggle activation of the category. 
+     <br>
+
+    <div class="dialog-actions">
+      <button type="button" id="btn-close-config" class="btn btn-secondary">Close</button>
+    </div>
+</dialog>
+
+<!-- Import dialog -->
+<dialog id="dialog-import">
+
+     <h3>Import Bookmarks</h3> <br>
+
+    <input type="file" id="fileInput" accept=".json" />
+
+    <div class="dialog-actions">
+      <button type="button" id="btn-close-import" class="btn btn-secondary">Close</button>
+    </div>
+
+</dialog>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
