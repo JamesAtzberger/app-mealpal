@@ -1,4 +1,4 @@
-# MealKin App: Recipes for Healthy Cooking 
+# MealKind App: Recipes for Healthy Cooking 
 
 The app was developed for finding healthy recipes that are easy to cook. 
 
