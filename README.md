@@ -1,4 +1,4 @@
-# MealPal App: Recipes for Healthy Cooking 
+# MealKin App: Recipes for Healthy Cooking 
 
 The app was developed for finding healthy recipes that are easy to cook. 
 
