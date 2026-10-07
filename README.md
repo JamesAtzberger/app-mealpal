@@ -1,4 +1,4 @@
-# MealKind App: Recipes for Healthy Cooking 
+# MunchBuddy App: Recipes for Healthy Cooking 
 
 The app was developed for finding healthy recipes that are easy to cook. 
 
