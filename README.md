@@ -1,4 +1,4 @@
-# MunchBuddy App: Recipes for Healthy Cooking 
+# Sokeri Recipe App: Healthy Cooking and Meal Planning
 
 The app was developed for finding healthy recipes that are easy to cook. 
 
@@ -26,8 +26,8 @@ You click the recipe description to get the full set of instructions for cooking
 <img src="./doc/images/mealpal_recipe.png" width="40%"> 
 </a>
 </p>
-By bookmarking recipes you also can save them for later and download them to 
-share with other people.  
+By bookmarking recipes you also can save them for later and download them for meal
+planning and to share with other people.  
 <br>
 <br>
 
