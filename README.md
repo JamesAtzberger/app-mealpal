@@ -1,5 +1,5 @@
 # Sokeri Recipes App: Healthy Cooking and Meal Planning
-
+ 
 The app was developed for finding healthy recipes that are easy to cook. 
 
 You can try out the app by clicking here [[link]](https://jamesatzberger.github.io/app-sokeri-cooking/index.html).
