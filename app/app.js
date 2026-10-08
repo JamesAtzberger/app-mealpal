@@ -423,6 +423,7 @@ function toggleBookmarked() {
   } else {
     btnBookmarked.setAttribute('data-state','active');
     searchQuery = ""; // clear search 
+    searchInput.value = searchQuery;
   }
   render();
 }
