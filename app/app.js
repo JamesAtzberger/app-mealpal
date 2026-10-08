@@ -220,6 +220,19 @@ function htmlFullRecipe(recipe) {
          onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'avatar',textContent:''}))">`
     : `<div class="avatar">${escapeHtml(initials(recipe.name))}</div>`;
 
+  // button bookmark state 
+  let I = recipe_data.findIndex(c => c.slug == recipe.slug);
+  let bookmarkState = "";
+  let bookmarkStateLabel = "";
+
+  if (bookmarkedFlagList[I] == 1) {
+    bookmarkState = 'in-active'; 
+    bookmarkStateLabel = 'Bookmarked'; 
+  } else {
+    bookmarkState = 'active';
+    bookmarkStateLabel = 'Bookmark';
+  }
+  
   let ingredientsStr = "";
   let directionsStr = "";
   let nutritionStr = "";
@@ -293,6 +306,7 @@ function htmlFullRecipe(recipe) {
       ${recipe.notes ? `<h3> Notes: </h3> ${recipe.notes}` : ""} <br> <br>
       </div>
       <button class="btn btn-secondary btn-small" data-action="close">Close</button>
+      <button class="btn btn-secondary btn-small btn-card-bookmark" data-state="${bookmarkState}" data-action="bookmark">${bookmarkStateLabel}</button>
       </div>
     </article>
   `;
