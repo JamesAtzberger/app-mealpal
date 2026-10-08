@@ -292,6 +292,10 @@ function htmlFullRecipe(recipe) {
         ${avatar}
         ${recipe.name ? `<div class="full-recipe-title">${escapeHtml(recipe.name)}</div>` : ""}
       </div>
+      <div class="card-actions">
+      <button class="btn btn-secondary btn-small" data-action="close">Close</button>
+      <button class="btn btn-secondary btn-small btn-card-bookmark" data-state="${bookmarkState}" data-action="bookmark" recipe-id="${recipe.slug}">${bookmarkStateLabel}</button>
+      </div>
       <div class="full-recipe-detail">
       <h3> Nutrition Info: </h3> 
       ${nutritionStr} 
@@ -304,11 +308,11 @@ function htmlFullRecipe(recipe) {
       <h3> Directions: </h3> 
       ${directionsStr} 
       ${recipe.notes ? `<h3> Notes: </h3> ${recipe.notes}` : ""} <br> <br>
-      <div class="card-actions">
-      <button class="btn btn-secondary btn-small" data-action="close">Close</button>
-      <!-- 
-      <button class="btn btn-secondary btn-small btn-card-bookmark" data-state="${bookmarkState}" data-action="bookmark">${bookmarkStateLabel}</button>
-      -->
+      <div>
+      <button class="btn btn-secondary btn-small btn-span" data-action="close">Close</button> <br>
+      </div>
+      <div>
+      <button class="btn btn-secondary btn-small btn-span btn-card-bookmark" data-state="${bookmarkState}" data-action="bookmark" recipe-id="${recipe.slug}">${bookmarkStateLabel}</button>
       </div>
     </article>
   `;
@@ -635,15 +639,15 @@ listEl.addEventListener("click", event => {
 
   if (button && buttonEl) { // check if button pressed 
 
-    console.log("button pressed");
-    console.log(`${button.dataset.action}`);
-    console.log(`buttonEl.data-state=${buttonEl.getAttribute('data-state')}`);
+    //console.log("button pressed");
+    //console.log(`${button.dataset.action}`);
+    //console.log(`buttonEl.data-state=${buttonEl.getAttribute('data-state')}`);
    
     // toggle button 
     if (buttonEl.getAttribute('data-state') === "active") {
 
       if (button.dataset.action === "bookmark") {
-        console.log(`bookmarked id = ${id}`);
+        //console.log(`bookmarked id = ${id}`);
         bookmarkRecipeAdd(id);
       }
 
@@ -651,7 +655,7 @@ listEl.addEventListener("click", event => {
     } else { // unbookmark it 
 
       if (button.dataset.action === "bookmark") {
-        console.log(`bookmarked id = ${id}`);
+        //console.log(`bookmarked id = ${id}`);
         bookmarkRecipeRemove(id);
       }
 
@@ -669,12 +673,46 @@ listEl.addEventListener("click", event => {
 });
 
 shownRecipeEl.addEventListener("click", event => {
+
   const button = event.target.closest("button[data-action]");
   if (!button) return;
 
   if (button.dataset.action === "close") {
     closeRecipe();
   } 
+
+  const buttonEl = event.target.closest(".btn");
+  if (buttonEl) { // check further what button pressed 
+
+    //console.log("button pressed");
+    //console.log(`${button.dataset.action}`);
+    //console.log(`buttonEl.data-state=${buttonEl.getAttribute('data-state')}`);
+   
+    // toggle button 
+    if (buttonEl.getAttribute('data-state') === "active") {
+
+      if (button.dataset.action === "bookmark") {
+        const id = buttonEl.getAttribute('recipe-id');
+        //console.log(`bookmarked id = ${id}`);
+        bookmarkRecipeAdd(id);
+      }
+
+      buttonEl.setAttribute('data-state',"in-active")
+    } else { // unbookmark it 
+
+      if (button.dataset.action === "bookmark") {
+        const id = buttonEl.getAttribute('recipe-id');
+        //console.log(`bookmarked id = ${id}`);
+        bookmarkRecipeRemove(id);
+      }
+
+      buttonEl.setAttribute('data-state',"active")
+    }
+
+  } else { // if no button pressed 
+    // nothing 
+  } 
+
 
 });
 

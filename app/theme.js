@@ -1,30 +1,35 @@
-// lets the user override it with a toggle button, remembering the choice in localStorage.
-
+// manage theme and toggle between light and dark  
 const THEME_KEY = "recipe-app:theme";
 
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
+  saveTheme(theme); 
 }
 
 function currentSystemPrefersDark() {
   return window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
 
-/** Call once on startup. Restores a saved preference, if any. */
+// Call once on startup. Restores a saved preference, if any.
 export function initTheme() {
   const saved = localStorage.getItem(THEME_KEY);
-  if (saved) applyTheme(saved);
-  // if nothing saved, CSS's @media (prefers-color-scheme) rules already
-  // handle it with no JS/attribute needed.
+  if (saved) {
+    applyTheme(saved);
+  } else { // apply a default theme
+    applyTheme("dark"); // starting theme 
+  }
 }
 
-/* Flips light<->dark and remembers the choice. */
+export function saveTheme(theme) {
+  localStorage.setItem(THEME_KEY, theme);
+}
+
+// Flips light<->dark and remembers the choice. 
 export function toggleTheme() {
   const current =
     document.documentElement.getAttribute("data-theme") ||
     (currentSystemPrefersDark() ? "dark" : "light");
   const next = current === "dark" ? "light" : "dark";
   applyTheme(next);
-  localStorage.setItem(THEME_KEY, next);
   return next;
 }
