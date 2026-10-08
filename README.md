@@ -1,4 +1,4 @@
-# Sokeri Recipe App: Healthy Cooking and Meal Planning
+# Sokeri Cooking App: Healthy Recipes and Meal Planning
 
 The app was developed for finding healthy recipes that are easy to cook. 
 
