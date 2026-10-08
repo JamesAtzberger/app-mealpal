@@ -304,9 +304,11 @@ function htmlFullRecipe(recipe) {
       <h3> Directions: </h3> 
       ${directionsStr} 
       ${recipe.notes ? `<h3> Notes: </h3> ${recipe.notes}` : ""} <br> <br>
-      </div>
+      <div class="card-actions">
       <button class="btn btn-secondary btn-small" data-action="close">Close</button>
+      <!-- 
       <button class="btn btn-secondary btn-small btn-card-bookmark" data-state="${bookmarkState}" data-action="bookmark">${bookmarkStateLabel}</button>
+      -->
       </div>
     </article>
   `;
