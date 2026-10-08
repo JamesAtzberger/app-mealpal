@@ -422,6 +422,7 @@ function toggleBookmarked() {
     btnBookmarked.setAttribute('data-state','in-active');
   } else {
     btnBookmarked.setAttribute('data-state','active');
+    searchQuery = ""; // clear search 
   }
   render();
 }
