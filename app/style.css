@@ -123,6 +123,10 @@ body {
   align-items: center;
 }
 
+.header-control h1 {
+  align-items: center;
+}
+
 #search-input {
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--border);
