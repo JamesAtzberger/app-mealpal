@@ -1,5 +1,11 @@
+<p align="left">
+<a href="https://jamesatzberger.github.io/app-sokeri-cooking/index.html">
+<img src="./doc/images/app_logo_anchor.png" width="120em"> 
+</a>
+</p>
+
 # Sokeri Recipes App: Healthy Cooking and Meal Planning
- 
+
 The app was developed for finding healthy recipes that are easy to cook. 
 
 You can try out the app by clicking here [[link]](https://jamesatzberger.github.io/app-sokeri-cooking/index.html).
@@ -9,7 +15,7 @@ You can try out the app by clicking here [[link]](https://jamesatzberger.github.
 You can sort by food types, amount of fat or sugar, and other filters. 
 <p align="left">
 <a href="https://jamesatzberger.github.io/app-sokeri-cooking/index.html">
-<img src="./doc/images/app_preview.png" width="60%"> 
+<img src="./doc/images/app_preview.png" width="450em"> 
 </a>
 </p>
 
@@ -17,13 +23,13 @@ By clicking the gear button you can customize the levels for sugar, fat, and oth
 conditions.
 <p align="left">
 <a href="https://jamesatzberger.github.io/app-sokeri-cooking/index.html">
-<img src="./doc/images/app_config.png" width="60%"> 
+<img src="./doc/images/app_config.png" width="450em"> 
 </a>
 </p>
 You click the recipe description to get the full set of instructions for cooking it.
 <p align="left">
 <a href="https://jamesatzberger.github.io/app-sokeri-cooking/index.html">
-<img src="./doc/images/app_recipe.png" width="60%"> 
+<img src="./doc/images/app_recipe.png" width="450em"> 
 </a>
 </p>
 By bookmarking recipes you also can save them for later and download them for meal
